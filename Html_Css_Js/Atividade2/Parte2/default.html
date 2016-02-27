@@ -14,7 +14,7 @@
         do_game(colors);
         function do_game(colors){
             colors = ["blue","cia","gold","gray","green","magenta","orange","red","white","yellow"];
-            index_color = Math.floor((Math.random() * 10));
+            index_color = Math.floor((Math.random() * (colors.length)));
             color_target = colors[index_color];
             console.log('The right color is ' + color_target);
             while(!guess_right){
