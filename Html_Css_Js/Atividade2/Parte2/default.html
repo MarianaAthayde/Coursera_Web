@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+    <body style="background-color:lightblue;"></body>
+    
+        <script>
+        var colors;
+        var index_color;
+        var color_target;
+        var guess_right = false;
+        var guess;
+        var guess_count = 0;
+        do_game(colors);
+        function do_game(colors){
+            colors = ["blue","cia","gold","gray","green","magenta","orange","red","white","yellow"];
+            index_color = Math.floor((Math.random() * 10));
+            color_target = colors[index_color];
+            console.log('The right color is ' + color_target);
+            while(!guess_right){
+				
+				guess = shot(colors);
+				guess_count += 1;
+                guess_right = check_guess(guess,color_target,colors);
+            }
+        }
+        function shot(colors){
+			return prompt("I'm thinking in one of these colors: \n"+ colors +
+                "\n What color I'm thinking of?\n");
+        }
+        function check_guess(guess, color_target, colors){
+            if(colors.indexOf(guess)<0){
+                alert("I don't recognize that color");
+                guess_right = false;
+            }else{
+                if(guess > color_target){
+                    alert("Your input is alphabetically higher than mine! Try it again.");
+                    guess_right = false;
+                }
+                if(guess < color_target){
+                    alert("Your input is alphabetically lower than mine! Try it again.");
+                    guess_right = false;
+                }
+                if(guess == color_target){
+                    alert("Congrats! You are right. You took " + guess_count + "guesses.");
+                    guess_right = true;
+					console.log(color_target);
+                    document.body.style.backgroundColor = color_target;
+                }
+            }
+            return guess_right;
+        }
+        </script>
+</html>

@@ -1,0 +1,33 @@
+fieldset {
+    background: lightyellow;
+    border:10px solid yellow;
+    margin-bottom:10px;
+    width:720px;
+}
+
+label{
+    width:180px;
+    display:inline-block;
+    text-align:right;
+    vertical-align:top;
+}
+
+texarea{
+    width:360px;
+    height:50px;
+}
+
+rang{
+    margin: auto;
+    text-align:center;
+    padding-top:10px;
+    vertical-align:top;
+}
+
+legend{
+    font-weight: bold;
+}
+
+label:hover { 
+    font-size: 20px 
+}

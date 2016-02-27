@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <script>
+        var colors;
+        var index_color;
+        var color_target;
+        var guess_right = false;
+        var guess;
+        do_game(colors);
+        function do_game(colors){
+            colors = ["blue","cia","gold","gray","green","magenta","orange","red","white","yellow"];
+            index_color = Math.floor((Math.random() * 10));
+            color_target = colors[index_color];
+            console.log('The right color is ' + color_target);
+            while(!guess_right){
+				
+				guess = shot(colors);
+                if(guess == color_target){
+                    guess_right = true;
+                }
+            }
+        }
+        function shot(colors){
+			return prompt("I'm thinking in one of these colors: \n"+ colors +
+                "\n What color I'm thinking of?\n");
+        }
+        </script>
+    </head/>
+    <body></body>
+    
+</html>
